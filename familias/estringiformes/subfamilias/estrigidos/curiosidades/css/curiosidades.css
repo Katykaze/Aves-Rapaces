@@ -1,0 +1,414 @@
+/* Navegacion Principal */
+.nav-bg {
+    background-color: var(--secundario);
+}
+/*  Globales **/
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    /* Hack para Box Model **/
+    scroll-snap-type: y mandatory;
+}
+body {
+    font-size: 16px;
+    /* 1rem = 10px */
+    font-family: 'Krub', sans-serif;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.sombra {
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+
+
+/*para alinear el navegado*/
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+}
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+
+
+
+.menu {
+    visibility: hidden;
+    position: absolute;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0088ff;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    margin-left: -4rem;
+    display: block;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.dropdown-menu>li {
+    float: left;
+}
+
+.dropdown-content li ul {
+    display: none;
+    position: absolute;
+}
+
+.dropdown-content li:hover>ul {
+    display: block;
+}
+
+.dropdown-content li ul li {
+    position: relative;
+}
+
+.dropdown-content li ul li {
+    right: -120px;
+    top: -48px;
+    background-color: #0088ff;
+}
+
+
+
+/* Tipografia */
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+
+/* Titulos */
+.titulo span {
+    font-size: 2rem;
+}
+
+/* mostrar el dropdown cuando se hace click */
+input,
+ul.dropdown-menu {
+    display: none;
+}
+
+
+input:checked~ul.dropdown-menu {
+    display: block;
+}
+
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3 {
+    /* color: var(--secundario); */
+    font-weight: normal;
+}
+
+.curiosidades p {
+    line-height: 2;
+    text-align: center;
+    width: 90%;
+    margin-left: 1rem;
+}
+
+/** Footer **/
+.footer {
+    text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+    }
+
+    .w-sm-100 {
+        width: auto;
+    }
+
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* ----------- 0 - 400px ----------- */
+@media screen and (max-width: 400px) {
+    body {
+        font-family: "Calibri, sans-serif";
+        font-size: 6px;
+        color: red;
+        background-image: url(../img/fondo6.jpg);
+        background-size: 100vmax 100vmax;
+    }
+
+    .menu {
+        visibility: visible;
+        max-width: 3rem;
+        position: absolute;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        left: 40%;
+    }
+
+    curiosidades {
+        width: 50%;
+    }
+
+    .dropdown:hover .dropdown-content ul li {
+        background-color: blue;
+        top: -4.5rem;
+        left: -3.5rem;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: contents;
+        left: 43%;
+    }
+
+    /* audio */
+    audio::-webkit-media-controls-panel {
+        background-color: red;
+    }
+
+    .audio {
+        width: 50vmin;
+    }
+
+    /* fin audio */
+
+    /* video */
+    .video {
+        width: 100%;
+    }
+
+    /* fin video */
+}
+
+/* ----------- 400 - 800px ----------- */
+@media screen and (min-width: 400px) and (max-width: 800px) {
+    body {
+        font-size: 8px;
+        font-family: cambria;
+        color: blue;
+        background-image: url(../img/fondo1a.jpg);
+        background-repeat: repeat 2;
+        background-size: 100vmax 100vmax;
+
+    }
+
+    .menu {
+        visibility: visible;
+        max-width: 3rem;
+        position: absolute;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: contents;
+        left: 43%;
+    }
+
+    .dropdown:hover .dropdown-content ul li {
+        top: -4.5rem;
+        left: 10.5rem;
+    }
+
+    .dropdown:hover .dropdown-content ul {
+        display: contents;
+    }
+
+    curiosidades {
+        width: 50%;
+    }
+
+    /* audio */
+    audio::-webkit-media-controls-panel {
+        background-color: blue;
+    }
+
+    .audio {
+        width: 70vmin;
+    }
+
+    /* fin audio */
+
+    /* video */
+    .video {
+        width: 100%;
+    }
+
+    /* fin video */
+}
+
+/* ----------- 801px - 1200px ----------- */
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+    body {
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        font-size: 10px;
+        color: green;
+        background-image: url(../img/fondo2a.jpg);
+        background-repeat: no-repeat;
+        background-size: 100vmax 100vmax;
+    }
+
+    .dropdown {
+        height: fit-content;
+    }
+
+    /* audio */
+    audio::-webkit-media-controls-panel {
+        background-color: green;
+    }
+
+    .audio {
+        margin-top: 5vmin;
+        width: 30vmin;
+    }
+
+    /* fin audio */
+
+    /* video */
+    .video {
+        width: 100%;
+    }
+
+    /* fin video */
+}
+
+/* ----------- 1201px - 1600px ----------- */
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+    .hero {
+        background-image: none;
+    }
+
+    body {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 12px;
+        color: yellow;
+        background-image: url(../img/fondo8.png);
+        background-repeat: no-repeat;
+        background-size: 100vmax 100vmax;
+    }
+
+    .dropdown:hover .dropdown-content ul li {
+        top: -4.5rem;
+        left: 10.5rem;
+    }
+
+    /* audio */
+    audio::-webkit-media-controls-panel {
+        background-color: yellow;
+    }
+
+    .audio {
+        margin-top: 5vmin;
+        width: 30vmin;
+    }
+
+    /* fin audio */
+
+    /* video */
+    .video {
+        width: 100%;
+    }
+
+    /* fin video */
+}
+
+/* ----------- 1600px + ----------- */
+@media screen and (min-width: 1601px) {
+    .hero {
+        background-image: none;
+    }
+
+    body {
+        font-family: courier, courier new, serif;
+        font-size: 16px;
+        color: orange;
+        background-image: url(../img/fondo9.jpg);
+        background-repeat: no-repeat;
+        background-size: 100vmax 100vmax;
+    }
+
+    .dropdown:hover .dropdown-content ul li {
+        top: -4.5rem;
+        left: 14.5rem;
+    }
+
+    /* audio */
+    audio::-webkit-media-controls-panel {
+        background-color: orange;
+    }
+
+    .audio {
+        margin-top: 5vmin;
+        width: 40vmin;
+    }
+
+    /* fin audio */
+
+    /* video */
+    .video {
+        width: 100%;
+    }
+
+    /* fin video */
+}
